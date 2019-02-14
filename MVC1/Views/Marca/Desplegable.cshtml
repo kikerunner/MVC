@@ -1,0 +1,25 @@
+﻿@using MVC1.Models;
+@{
+    ViewBag.Title = "Desplegable";
+}
+
+<h2>Desplegable</h2>
+
+@Html.DropDownList("LasMarcas", new List<SelectListItem>
+{
+    new SelectListItem { Text = "Opel", Value = "1", Selected = true},
+    new SelectListItem { Text = "Renault", Value = "2"},
+    new SelectListItem { Text = "Alfa Romeo", Value = "3"}
+}, "Selecciona Marca")
+
+@Html.DropDownList("Marcas", "Selecciona Marca")
+
+<select id="Marcos" name="Marcos">
+    @foreach(MarcaModelo m in ViewBag.Marcas2)
+    {
+        <option value="@m.ID">@m.Nom_marca</option>
+    }
+</select>
+
+
+
